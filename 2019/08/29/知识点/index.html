@@ -1,21 +1,21 @@
 
 <!DOCTYPE html>
-<html lang="en" class="loading">
+<html lang="zh-Hans" class="loading">
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>知识点 - Hexo</title>
+    <title>知识点 - 凉柚</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
-    <meta name="keywords" content="Fechin,"> 
-    <meta name="description" content="概念体系结构数据库的体系结构是指 数据库的组成、工作过程与原理，以及数据在数据库中的组织与管理机制。
+    <meta name="keywords" content="ZSC,"> 
+    <meta name="description" content="唔 摸得,概念体系结构数据库的体系结构是指 数据库的组成、工作过程与原理，以及数据在数据库中的组织与管理机制。
 体系结构包括：
 ​    实例（instence），
 ​    数据库文件（database），,"> 
-    <meta name="author" content="John Doe"> 
-    <link rel="alternative" href="atom.xml" title="Hexo" type="application/atom+xml"> 
+    <meta name="author" content="ZSC"> 
+    <link rel="alternative" href="atom.xml" title="凉柚" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <link rel="stylesheet" href="/css/diaspora.css">
@@ -31,12 +31,12 @@
 </head>
 </html>
 <body class="loading">
-    <span id="config-title" style="display:none">Hexo</span>
+    <span id="config-title" style="display:none">凉柚</span>
     <div id="loader"></div>
     <div id="single">
     <div id="top" style="display: block;">
     <div class="bar" style="width: 0;"></div>
-    <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
+    <a class="icon-home image-icon" href="javascript:;" data-url="https://zhangshuchun.github.io"></a>
     <div title="播放/暂停" class="icon-play"></div>
     <h3 class="subtitle">知识点</h3>
     <div class="social">
@@ -149,6 +149,10 @@
 
 
     </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概念"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#体系结构"><span class="toc-number">1.1.</span> <span class="toc-text">体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Oracle服务器"><span class="toc-number">1.2.</span> <span class="toc-text">Oracle服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SGA内存结构包括"><span class="toc-number">1.3.</span> <span class="toc-text">SGA内存结构包括</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Oracle进程主要有"><span class="toc-number">1.4.</span> <span class="toc-text">Oracle进程主要有</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库启动和关闭"><span class="toc-number">1.5.</span> <span class="toc-text">数据库启动和关闭</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库的启动3个状态："><span class="toc-number">1.5.1.</span> <span class="toc-text">数据库的启动3个状态：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数据库的关闭3个状态："><span class="toc-number">1.5.2.</span> <span class="toc-text">数据库的关闭3个状态：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事务"><span class="toc-number">1.6.</span> <span class="toc-text">事务</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#事务的概念"><span class="toc-number">1.6.0.1.</span> <span class="toc-text">事务的概念</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#事务的4个特性"><span class="toc-number">1.6.0.2.</span> <span class="toc-text">事务的4个特性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#事务控制"><span class="toc-number">1.6.0.3.</span> <span class="toc-text">事务控制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL语言"><span class="toc-number">1.7.</span> <span class="toc-text">SQL语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delete和truncate的区别"><span class="toc-number">1.8.</span> <span class="toc-text">delete和truncate的区别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PL-SQL语言"><span class="toc-number">2.</span> <span class="toc-text">PL/SQL语言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PL-SQL语言的叙述："><span class="toc-number">2.1.</span> <span class="toc-text">PL/SQL语言的叙述：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#属性数据类型"><span class="toc-number">2.2.</span> <span class="toc-text">属性数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#TYPE"><span class="toc-number">2.2.1.</span> <span class="toc-text">%TYPE</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ROWTYPE"><span class="toc-number">2.2.2.</span> <span class="toc-text">%ROWTYPE</span></a></li></ol></li></ol></li></ol>
+        </div>
     
 </div>
 
