@@ -1,0 +1,211 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>代理 - 凉柚</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="ZSC,"> 
+    <meta name="description" content="唔 摸得,代理比方： 房屋中介，它就是一个代理对象，能代理行使房东（可以理解为Target）的权力，除此之外中介可以对房东的权利添加一些附加值，拦截房东的一些行为，如收取中介费。
+在设计模式中，有一种模式叫做,"> 
+    <meta name="author" content="ZSC"> 
+    <link rel="alternative" href="atom.xml" title="凉柚" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">凉柚</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="https://zhangshuchun.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">代理</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">代理</h1>
+        <div class="stuff">
+            <span>八月 29, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/代理/">代理</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h1 id="代理"><a href="#代理" class="headerlink" title="代理"></a>代理</h1><p>比方： 房屋中介，它就是一个代理对象，能代理行使房东（可以理解为Target）的权力，除此之外中介可以对房东的权利添加一些附加值，拦截房东的一些行为，如收取中介费。</p>
+<p>在设计模式中，有一种模式叫做代理模式：为其他对象提供一种代理以控制对这个对象的访问。</p>
+<h2 id="案例：（代理模式）"><a href="#案例：（代理模式）" class="headerlink" title="案例：（代理模式）"></a>案例：（代理模式）</h2><p>新建一个房东接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 房东接口</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public interface ILandlordible</span><br><span class="line">&#123;</span><br><span class="line">	void RentHosue();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>新建房东类实现接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 房东类</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">public class Landlord:ILandlordible</span><br><span class="line">&#123;</span><br><span class="line">	public virtual void RentHosue()</span><br><span class="line">	&#123;</span><br><span class="line">		Console.WriteLine(&quot;房东收取租金！&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>房东委托中介出租，建立一个中介类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class Intermediary : ILandlordible</span><br><span class="line">  &#123;</span><br><span class="line">      private ILandlordible landlor;</span><br><span class="line"></span><br><span class="line">      public Intermediary(ILandlordible landlor)</span><br><span class="line">      &#123;</span><br><span class="line">          this.landlor = landlor;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      private void CollectIntermediaryFees()</span><br><span class="line">      &#123;</span><br><span class="line">          Console.WriteLine(&quot;中介收取服务费！&quot;);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      public void RentHosue()</span><br><span class="line">      &#123;</span><br><span class="line">          landlor.RentHosue();</span><br><span class="line">          CollectIntermediaryFees();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Console.WriteLine(&quot;房东委托中中介帮其出租屋！&quot;);</span><br><span class="line">Console.WriteLine(&quot;中介成功出租房屋&quot;);</span><br><span class="line">ILandlordible lanflord = new Intermediary(new Landlord());</span><br><span class="line">lanflord.RentHosue();</span><br><span class="line">Console.ReadLine();</span><br></pre></td></tr></table></figure>
+
+<p>可以看到关于Intermediary的实现</p>
+<p>　　1.首先实现一个ILandlordible的接口，因为它将具有房东出租房屋的权力</p>
+<p>　　2.然后类中保存着ILandlordible的引用，因为它将被委托房东的行为</p>
+<p>　　3.在RentHouse方法中，中介首先执行房东的行为，然后收取中介费。</p>
+<h2 id="动态代理"><a href="#动态代理" class="headerlink" title="动态代理"></a><strong>动态代理</strong></h2><p>运行时动态地产生代理类，进而产生代理对象。</p>
+<p>要动态的产生一个或者拦截它的行为，在.NET平台下:</p>
+<p>　　1..NET Remoting中可以利用后门进行拦截，但是必须显示的继承ContextBoundObject类,我觉得这个方案不是很好，因为往往具有分类学区分的类之前的关系才会采用继承，而且会受到单继承的限制。</p>
+<p>　　2.Emit对IL直接进行操作，这个也是办法，但是我觉得过于复杂，而且没有必要研究到那个深度，所以我也不是很推荐。</p>
+<p>　　3.在前面介绍的两种方法之间，我选取了一个折中的难度的方法，<a href="http://www.castleproject.org/" target="_blank" rel="noopener">Castle.Net</a> 是一个开源项目，它有一个动态代理的库能很好地解决.NET平台下动态代理的问题，也被很多流行的框架所采用，如NHibernate,Moq.</p>
+<p>解释：</p>
+<p>Castle中的ProxyGenerator这个类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class ProxyGenerator</span><br><span class="line">&#123;</span><br><span class="line">    public ProxyGenerator();</span><br><span class="line">    public ProxyGenerator(IProxyBuilder builder);</span><br><span class="line">    public IProxyBuilder ProxyBuilder &#123; get; &#125;</span><br><span class="line">    public T CreateClassProxy&lt;T&gt;(params IInterceptor[] interceptors);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上是ProxyGenerator的一些片段，这个类可以从名字中很容易看出它可以动态地产生代理。</p>
+<p>CreateClassProxy这个泛型的方法就是指定需要代理的目标，这样就可以我某个特定的类产生代理。但是，仅仅指定目标是不够的，如中介它除了执行房东的职责之外，中介这个代理对象还有自己额外的逻辑，如收取服务费用。</p>
+<p>所以CreateClassProxy提供了一个可变的参数IInterceptor数组。来看看IInterceptor接口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public interface IInterceptor</span><br><span class="line"> &#123;</span><br><span class="line">     void Intercept(IInvocation invocation);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>当我在调用CreateClassProxy并传入实现了IInterceptor的对象时，所有的方法都将被IInterceptor的Intercept方法所拦截，并且Interceptor的参数IInvocation携带了所调用方法的所有信息，这样我们就可以对所调用的方法进行全面的拦截，为所欲为。</p>
+<p>继续沿用之前的ILandlordible接口，但对于Landlord（房东）类，由于需要对它产生一个代理类，原理是需要继承于Landlord类，对源类的方法进行重载，利用多态性，利用接口调用到重载的方法，所以对源类进行修改：</p>
+<p>1.修改房东方法为虚方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public class Landlord:ILandlordible</span><br><span class="line">  &#123;</span><br><span class="line">      public virtual void RentHouse()</span><br><span class="line">      &#123;</span><br><span class="line">          Console.WriteLine(&quot;房东收取租金！&quot;);</span><br><span class="line">      &#125; </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.用动态代理的方式实现添加收取服务的逻辑</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public class IntermediaryIntercetor:IInterceptor</span><br><span class="line">  &#123;</span><br><span class="line">      public void Intercept(IInvocation invocation)</span><br><span class="line">      &#123;</span><br><span class="line">          //执行房东的逻辑</span><br><span class="line">          invocation.Proceed();</span><br><span class="line">          CollectIntermediaryFees();</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      private void CollectIntermediaryFees()</span><br><span class="line">      &#123;</span><br><span class="line">          Console.WriteLine(&quot;中介收取服务费！&quot;);</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.调用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class RentHouseStroyDynamicProxyVersion </span><br><span class="line">    &#123;</span><br><span class="line">        static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(&quot;房东委托中介帮其出租房屋！&quot;);</span><br><span class="line">            Landlord proxyLandlord = CreateLandlordProxy();</span><br><span class="line">            Console.WriteLine(&quot;中介成功出租房屋&quot;);</span><br><span class="line">            proxyLandlord.RentHouse();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        private static Landlord CreateLandlordProxy()</span><br><span class="line">        &#123;</span><br><span class="line">            ProxyGenerator proxyGenerator = new ProxyGenerator();</span><br><span class="line">            Landlord proyLandlord = proxyGenerator.CreateClassProxy&lt;Landlord&gt;(new IntermediaryIntercetor());</span><br><span class="line">            return proyLandlord;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>案例二、(动态代理)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public class Teacher</span><br><span class="line">  &#123;</span><br><span class="line">      public virtual String Say(String msg)</span><br><span class="line">      &#123;</span><br><span class="line">          Console.WriteLine(&quot;老师在说话：&quot; + msg);</span><br><span class="line">          return &quot;好孩子&quot;;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  public class TeacherIInterceptor : IInterceptor</span><br><span class="line">  &#123;</span><br><span class="line">  </span><br><span class="line">      public void Intercept(IInvocation invocation)</span><br><span class="line">      &#123;</span><br><span class="line">          Console.WriteLine(&quot;进入方法，参数：&quot;+invocation.Arguments[0].ToString());</span><br><span class="line">          invocation.Proceed();</span><br><span class="line">          Console.WriteLine(&quot;离开方法，返回值：&quot;+invocation.ReturnValue);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      private static Teacher CreateLandlordPeoxy()</span><br><span class="line">      &#123;</span><br><span class="line">          ProxyGenerator proxyGenerator = new ProxyGenerator();</span><br><span class="line">          Teacher proyLandlord = proxyGenerator.CreateClassProxy&lt;Teacher&gt;(new TeacherIInterceptor());</span><br><span class="line">          return proyLandlord;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      static void Main(string[] args)</span><br><span class="line">      &#123;</span><br><span class="line">          Teacher teacher = CreateLandlordPeoxy();</span><br><span class="line">          teacher.Say(&quot;nihao&quot;);</span><br><span class="line">          Console.ReadLine();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>错误：
+
+<p>ProxyGenerator proxyGenerator = new ProxyGenerator();</p>
+<p>报错 “System.Configuration.ConfigurationErrorsException”类型的未经处理的异常在 System.Configuration.dll 中发生 </p>
+<p>此错误调试是时候显示{“配置系统未能初始化”}，</p>
+<p>再看下去是packages.config 中packages报错未声明“packages”元素</p>
+<p>解决方案：</p>
+<p>以管理的方式运行</p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci=''
+        data-cs=''
+        data-r=''
+        data-o=''
+        data-a=''
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#代理"><span class="toc-number">1.</span> <span class="toc-text">代理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#案例：（代理模式）"><span class="toc-number">1.1.</span> <span class="toc-text">案例：（代理模式）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态代理"><span class="toc-number">1.2.</span> <span class="toc-text">动态代理</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
