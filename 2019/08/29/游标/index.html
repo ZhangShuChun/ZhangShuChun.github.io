@@ -10,8 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ZSC,"> 
-    <meta name="description" content="唔 摸得,游标定义游标的使用可以让用户想操作数组一样操作查询出来的数据集，实际上，它提供了一种从集合性质的结果中提取单挑记录的手段。
-游标的本质是一个结果集resultset，主要用来临时存储从数据库中提取出,"> 
+    <meta name="description" content="唔 摸得,*游标定义 * 游标（Cursor）的本质是一个结果集resultset，主要用来临时存储从数据库中提取出来的数据块。游标的使用可以让用户想操作数组一样操作查询出来的数据集，实际上，它提供了一种从集,"> 
     <meta name="author" content="ZSC"> 
     <link rel="alternative" href="atom.xml" title="凉柚" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -63,14 +62,13 @@
 
         </div>
         <div class="content markdown">
-            <h1 id="游标"><a href="#游标" class="headerlink" title="游标"></a>游标</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>游标的使用可以让用户想操作数组一样操作查询出来的数据集，实际上，它提供了一种从集合性质的结果中提取单挑记录的手段。</p>
-<p>游标的本质是一个结果集resultset，主要用来临时存储从数据库中提取出来的数据块。</p>
-<p>游标(Cursor)形象地看出一个变动的光标。它实际上是一个指针，它在一段Oracle存放数据查询结果集的内存中，它可以指向结果集中的任意记录，初始是指向首记录。想数组的结构。</p>
-<h2 id="游标的种类"><a href="#游标的种类" class="headerlink" title="游标的种类"></a>游标的种类</h2><p>Oracle游标分静态游标和REF游标两种，其中静态游标像一个数据快照，打开游标后的结构集是对数据库数据的一个备份，数据不随着对表执行DML操作改变。</p>
-<p>静态游标分成两种</p>
-<p>显示游标：是指在使用之前有明确的游标声明和定义，这样游标定义会关联数据查询语句，通常会返回一行或多行。打开游标后，用户可以利用游标的位置对结果集进行任何操作，显示游标有用户控制。</p>
-<p>隐式游标：它被PL/SQL自动关联，也叫SQL游标，由Oracle管理，用户无法控制但可以得到它的属性信息</p>
-<h3 id="1、显式游标："><a href="#1、显式游标：" class="headerlink" title="1、显式游标："></a>1、显式游标：</h3><p>由用户定义，需要的操作：定义游标、打开游标、提取数据、关闭游标，主要用于对查询语句的处理。</p>
+            <h6 id="游标定义"><a href="#游标定义" class="headerlink" title="*游标定义 * "></a><font color="red">*<em>游标定义 *</em> </font></h6><p>游标（Cursor）的本质是一个结果集resultset，主要用来临时存储从数据库中提取出来的数据块。游标的使用可以让用户想操作数组一样操作查询出来的数据集，实际上，它提供了一种从集合性质的结果中提取单挑记录的手段。</p>
+<h6 id="游标种类"><a href="#游标种类" class="headerlink" title="*游标种类 * "></a><font color="red">*<em>游标种类 *</em> </font></h6><p>游标分<strong>静态游标</strong>和<strong>REF游标</strong>两种</p>
+<p>静态游标像一个数据快照，打开游标后的结构集是对数据库数据的一个备份，数据不随着对表执行DML操作改变。</p>
+<p>*<em>静态游标分成两种 *</em></p>
+<p><strong>显示游标：</strong>是指在使用之前有明确的游标声明和定义，这样游标定义会关联数据查询语句，通常会返回一行或多行。打开游标后，用户可以利用游标的位置对结果集进行任何操作，显示游标有用户控制。</p>
+<p><strong>隐式游标：</strong>它被PL/SQL自动关联，也叫SQL游标，由Oracle管理，用户无法控制但可以得到它的属性信息</p>
+<h6 id="显式游标："><a href="#显式游标：" class="headerlink" title="显式游标："></a><font color="red">显式游标：</font></h6><p>由用户定义，需要的操作：定义游标、打开游标、提取数据、关闭游标，主要用于对查询语句的处理。</p>
 <p>属性：%FOUND %NOTFOUND %ISOPEN %ROWCOUNT</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">  cursor cu_user_pwd is select username, pwd from user_pwd where username is not null and pwd is not null;</span><br><span class="line">  v_userName user_pwd.username%type;</span><br><span class="line">  v_pwd      user_pwd.pwd%type;</span><br><span class="line">begin</span><br><span class="line">  open cu_user_pwd;</span><br><span class="line">  LOOP</span><br><span class="line">    fetch cu_user_pwd into v_userName, v_pwd;</span><br><span class="line">    DBMS_OUTPUT.PUT_LINE(&apos;名称&apos; || v_userName || &apos;密码&apos; || v_pwd);</span><br><span class="line">    exit when cu_user_pwd%notfound;</span><br><span class="line">  end loop;</span><br><span class="line">  close cu_user_pwd;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
 
@@ -79,21 +77,22 @@
 <p>FETCH cu_user_pwd INTO…提取数据</p>
 <p>CLOSE emp_cursor关闭游标</p>
 <p>因为提取出来的数据属于多行，所以通过loop循环打印即可。</p>
-<h3 id="2、隐式游标"><a href="#2、隐式游标" class="headerlink" title="2、隐式游标"></a>2、隐式游标</h3><p>由系统定义并为它创建工作区域，并且隐式的定义打开提取关闭，隐式游标的游标名就是’SQL’,属性和显示游标相同，主要用于对单行select语句或dml操作进行处理。</p>
+<h6 id="隐式游标"><a href="#隐式游标" class="headerlink" title="隐式游标"></a><font color="red">隐式游标</font></h6><p>由系统定义并为它创建工作区域，并且隐式的定义打开提取关闭，隐式游标的游标名就是’SQL’,属性和显示游标相同，主要用于对单行select语句或dml操作进行处理。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">--隐式游标</span><br><span class="line">create table cu_user_yin</span><br><span class="line">as</span><br><span class="line">select * from user_pwd</span><br></pre></td></tr></table></figure>
 
-<h3 id="3、参数游标"><a href="#3、参数游标" class="headerlink" title="3、参数游标"></a>3、参数游标</h3><p>在定义游标时加入参数的游标，可以配合游标for循环快速找到需要的数据。这里先讲一下</p>
-<h4 id="A-游标for循环"><a href="#A-游标for循环" class="headerlink" title="A.游标for循环"></a>A.游标for循环</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FOR table_record IN table_cursor LOOP</span><br><span class="line">　　STATEMENT;</span><br><span class="line">END LOOP;</span><br></pre></td></tr></table></figure>
+<h6 id="参数游标"><a href="#参数游标" class="headerlink" title="参数游标"></a><font color="red">参数游标</font></h6><p>在定义游标时加入参数的游标，可以配合游标for循环快速找到需要的数据。这里先讲一下</p>
+<p><strong>A.游标for循环</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FOR table_record IN table_cursor LOOP</span><br><span class="line">　　STATEMENT;</span><br><span class="line">END LOOP;</span><br></pre></td></tr></table></figure>
 
 <p>​    案例:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">  cursor cu_user_pwd is select username, pwd from user_pwd where username is not null and pwd is not null;</span><br><span class="line">  v_userName user_pwd.username%type;</span><br><span class="line">  v_pwd      user_pwd.pwd%type;</span><br><span class="line">begin</span><br><span class="line">  FOR table_record IN cu_user_pwd LOOP</span><br><span class="line">    DBMS_OUTPUT.PUT_LINE(&apos;名称&apos; || table_record.username || &apos;密码&apos; || table_record.pwd);</span><br><span class="line">  END LOOP;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
 
-<p>继续带参数的游标</p>
+<p><strong>继续带参数的游标</strong></p>
 <p>这里游标FOR循环省去了对于取到的数据的变量的命名和赋值，同时如果全部打印则不用写循环条件，代码精简了很多。</p>
 <p>如果想让代码更加精简，则可以去掉对游标的声明引入子查询即可，操作如下。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">declare</span><br><span class="line">  usernaemin varchar2(30);</span><br><span class="line">  cursor cu_user_pwd(in_username varchar2) is select username, pwd from user_pwd where username=in_username;</span><br><span class="line">  v_userName user_pwd.username%type;</span><br><span class="line">  v_pwd      user_pwd.pwd%type;</span><br><span class="line">begin</span><br><span class="line">  usernaemin := &apos;asd&apos;;</span><br><span class="line">  FOR table_record IN cu_user_pwd(usernaemin) LOOP</span><br><span class="line">    DBMS_OUTPUT.PUT_LINE(&apos;名称&apos; || table_record.username || &apos;密码&apos; || table_record.pwd);</span><br><span class="line">  END LOOP;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
 
-<h3 id="4、使用游标修改数据的注意事项"><a href="#4、使用游标修改数据的注意事项" class="headerlink" title="4、使用游标修改数据的注意事项"></a>4、使用游标修改数据的注意事项</h3><p>1.使用游标修改数据时，为防止他人在自己操作数据时对数据进行修改，oracle提供 for update字句进行 加锁。</p>
+<h6 id="使用游标修改数据的注意事项"><a href="#使用游标修改数据的注意事项" class="headerlink" title="使用游标修改数据的注意事项"></a><font color="red">使用游标修改数据的注意事项</font></h6><p>1.使用游标修改数据时，为防止他人在自己操作数据时对数据进行修改，oracle提供 for update字句进行 加锁。</p>
 <p>同时在你使用update或delete时，必须使用where current of+name_cursor语句，以及在最后记得提交。如果是级联操作则可以使用for update of 来进行相关表的加锁。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">--使用游标修改数据的注意事项</span><br><span class="line">declare</span><br><span class="line">  cursor cu_user_pwd is select username, pwd from user_pwd where username is not null and pwd is not null for update;</span><br><span class="line">  v_userName user_pwd.username%type;</span><br><span class="line">  v_pwd      user_pwd.pwd%type;</span><br><span class="line">begin</span><br><span class="line">  DBMS_OUTPUT.ENABLE (buffer_size=&gt;null);</span><br><span class="line">  FOR table_record IN cu_user_pwd LOOP</span><br><span class="line">      if table_record.username=&apos;asd&apos; and table_record.pwd=&apos;asd&apos; then</span><br><span class="line">         DBMS_OUTPUT.PUT_LINE(&apos;-------------------------------------------&apos;);</span><br><span class="line">         DBMS_OUTPUT.PUT_LINE(&apos;名称&apos; || table_record.username || &apos;密码&apos; || table_record.pwd);</span><br><span class="line">        update cu_user_new set pwd=&apos;asdzsc&apos; where username=&apos;asd&apos;;</span><br><span class="line">      end if;</span><br><span class="line">  END LOOP;</span><br><span class="line">  commit;</span><br><span class="line">end;</span><br></pre></td></tr></table></figure>
 
@@ -119,7 +118,7 @@
     </div>
     
         <div class='side'>
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#游标"><span class="toc-number">1.</span> <span class="toc-text">游标</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定义"><span class="toc-number">1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#游标的种类"><span class="toc-number">1.2.</span> <span class="toc-text">游标的种类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、显式游标："><span class="toc-number">1.2.1.</span> <span class="toc-text">1、显式游标：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、隐式游标"><span class="toc-number">1.2.2.</span> <span class="toc-text">2、隐式游标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、参数游标"><span class="toc-number">1.2.3.</span> <span class="toc-text">3、参数游标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#A-游标for循环"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">A.游标for循环</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、使用游标修改数据的注意事项"><span class="toc-number">1.2.4.</span> <span class="toc-text">4、使用游标修改数据的注意事项</span></a></li></ol></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#游标定义"><span class="toc-number">1.</span> <span class="toc-text">*游标定义 * </span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#游标种类"><span class="toc-number">2.</span> <span class="toc-text">*游标种类 * </span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#显式游标："><span class="toc-number">3.</span> <span class="toc-text">显式游标：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#隐式游标"><span class="toc-number">4.</span> <span class="toc-text">隐式游标</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#参数游标"><span class="toc-number">5.</span> <span class="toc-text">参数游标</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#使用游标修改数据的注意事项"><span class="toc-number">6.</span> <span class="toc-text">使用游标修改数据的注意事项</span></a></li></ol>
         </div>
     
 </div>

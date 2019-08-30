@@ -10,13 +10,11 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ZSC,"> 
-    <meta name="description" content="唔 摸得,语法：
-​     CREATE SEQUENCE 序列名 [相关参数]
+    <meta name="description" content="唔 摸得,语法：​     CREATE SEQUENCE 序列名 [相关参数]
 参数说明 ：
-
 INCREMENT BY :序列变化的步进，负值表示递减。(默认1)
 
-START WITH:序列的初始值 ,"> 
+START WITH:序列的初始值 。(,"> 
     <meta name="author" content="ZSC"> 
     <link rel="alternative" href="atom.xml" title="凉柚" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -68,10 +66,8 @@ START WITH:序列的初始值 ,">
 
         </div>
         <div class="content markdown">
-            <p><font color="red"><strong>语法：</strong></font></p>
-<p>​     CREATE SEQUENCE 序列名 [相关参数]</p>
-<p><font color="red"><strong>参数说明 ：</strong></font></p>
-<ul>
+            <h6 id="语法："><a href="#语法：" class="headerlink" title="语法："></a><font color="red"><strong>语法：</strong></font></h6><p>​     CREATE SEQUENCE 序列名 [相关参数]</p>
+<h6 id="参数说明-："><a href="#参数说明-：" class="headerlink" title="参数说明 ："></a><font color="red"><strong>参数说明 ：</strong></font></h6><ul>
 <li><p>INCREMENT BY :序列变化的步进，负值表示递减。(默认1)</p>
 </li>
 <li><p>START WITH:序列的初始值 。(默认1) </p>
@@ -85,8 +81,7 @@ START WITH:序列的初始值 ,">
 <li><p>CACHE:表示缓存序列的个数，数据库异常终止可能会导致序列中断不连续的情况，默认值为20，如果不使用缓存可设置NOCACHE</p>
 </li>
 </ul>
-<p><font color="red"><strong>例</strong> </font></p>
-<ul>
+<h6 id="例"><a href="#例" class="headerlink" title="例 "></a><font color="red"><strong>例</strong> </font></h6><ul>
 <li>CREATE SEQUENCE SEQ_DEMO </li>
 <li>INCREMENT BY 1 </li>
 <li>START WITH 1 </li>
@@ -95,12 +90,9 @@ START WITH:序列的初始值 ,">
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE SEQUENCE SEQ_AAA </span><br><span class="line">  INCREMENT BY 2 --序列变化的进步 每次加二</span><br><span class="line">  START WITH 1 --序列的初始值</span><br><span class="line">  MAXvalue 999999999 --序列生成的最大值</span><br><span class="line">  NOCYCLE --用于定义当序列产生的值达到限制值后是否循环(NOCYCLE:不循环，CYCLE:循环)。 </span><br><span class="line">  --表示缓存序列的个数，数据库异常终止可能会导致序列中断不连续的情况，默认值为20，</span><br><span class="line">  --如果不使用缓存可设置NOCACHE</span><br><span class="line">  NOCACHE;</span><br></pre></td></tr></table></figure>
 
-<p><font color="red"><strong>修改序列</strong> </font></p>
-<p>alter sequence SEQ_AAA INCREMENT BY 1; </p>
-<p><font color="red"><strong>删除序列</strong> </font></p>
-<p>drop sequence SEQ_AAA;</p>
-<p> <font color="red">*<em>序列的使用 *</em> </font></p>
-<ul>
+<h6 id="修改序列"><a href="#修改序列" class="headerlink" title="修改序列 "></a><font color="red"><strong>修改序列</strong> </font></h6><p>alter sequence SEQ_AAA INCREMENT BY 1; </p>
+<h6 id="删除序列"><a href="#删除序列" class="headerlink" title="删除序列 "></a><font color="red"><strong>删除序列</strong> </font></h6><p>drop sequence SEQ_AAA;</p>
+<h6 id="序列的使用"><a href="#序列的使用" class="headerlink" title="*序列的使用 * "></a><font color="red">*<em>序列的使用 *</em> </font></h6><ul>
 <li><p>currval 表示序列的当前值，新序列必须使用一次nextval 才能获取到值，否则会报错</p>
 </li>
 <li><p>nextval 表示序列的下一个值。新序列首次使用时获取的是该序列的初始值，从第二次使用时开始按照设置的步进递增</p>
@@ -134,7 +126,7 @@ START WITH:序列的初始值 ,">
     </div>
     
         <div class='side'>
-            
+            <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#语法："><span class="toc-number">1.</span> <span class="toc-text">语法：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#参数说明-："><span class="toc-number">2.</span> <span class="toc-text">参数说明 ：</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#例"><span class="toc-number">3.</span> <span class="toc-text">例 </span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#修改序列"><span class="toc-number">4.</span> <span class="toc-text">修改序列 </span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#删除序列"><span class="toc-number">5.</span> <span class="toc-text">删除序列 </span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#序列的使用"><span class="toc-number">6.</span> <span class="toc-text">*序列的使用 * </span></a></li></ol>
         </div>
     
 </div>
