@@ -10,7 +10,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ZSC,"> 
-    <meta name="description" content="唔 摸得,1234567--建立表空间，不指定位置放入oracle默认数据库存储位置create tablespace zscspace datafile &amp;apos;zscspace.dbf&amp;apos; s,"> 
+    <meta name="description" content="唔 摸得,
+  
+  
+    Welcome to my blog, please enter password to read.
+    
+  
+
+Incorrect Password!
+No conte,"> 
     <meta name="author" content="ZSC"> 
     <link rel="alternative" href="atom.xml" title="凉柚" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -62,9 +70,19 @@
 
         </div>
         <div class="content markdown">
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">--建立表空间，不指定位置放入oracle默认数据库存储位置</span><br><span class="line">create tablespace zscspace datafile &apos;zscspace.dbf&apos; size 100M autoextend on next 5M maxsize unlimited;</span><br><span class="line">--建立用户，指定表空间与临时表空间</span><br><span class="line">create user zsc IDENTIFIED BY zsc default tablespace zscspace temporary tablespace TEMP profile DEFAULT;</span><br><span class="line">--用户授权，为用户授予DBA权限</span><br><span class="line">grant dba to zsc with admin option;</span><br></pre></td></tr></table></figure>
-
-
+            <div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="Welcome to my blog, please enter password to read." />
+    <label for="pass">Welcome to my blog, please enter password to read.</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="true">
                 <source type="audio/mpeg" src="http://domain.com/awesome.mp3">
