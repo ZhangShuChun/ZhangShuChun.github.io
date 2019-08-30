@@ -10,12 +10,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ZSC,"> 
-    <meta name="description" content="唔 摸得,序列序列创建和使用语法：
+    <meta name="description" content="唔 摸得,语法：
 ​     CREATE SEQUENCE 序列名 [相关参数]
 参数说明 ：
 
 INCREMENT BY :序列变化的步进，负值表示递减。(默认1)
-START WITH,"> 
+
+START WITH:序列的初始值 ,"> 
     <meta name="author" content="ZSC"> 
     <link rel="alternative" href="atom.xml" title="凉柚" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -67,18 +68,24 @@ START WITH,">
 
         </div>
         <div class="content markdown">
-            <h1 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h1><h2 id="序列创建和使用"><a href="#序列创建和使用" class="headerlink" title="序列创建和使用"></a>序列创建和使用</h2><p><strong>语法：</strong></p>
+            <p><font color="red"><strong>语法：</strong></font></p>
 <p>​     CREATE SEQUENCE 序列名 [相关参数]</p>
-<p><strong>参数说明 ：</strong></p>
+<p><font color="red"><strong>参数说明 ：</strong></font></p>
 <ul>
-<li>INCREMENT BY :序列变化的步进，负值表示递减。(默认1)</li>
-<li>START WITH:序列的初始值 。(默认1) </li>
-<li>MAXvalue:序列可生成的最大值。(默认不限制最大值，NOMAXVALUE) </li>
-<li>MINVALUE:序列可生成的最小值。(默认不限制最小值，NOMINVALUE) </li>
-<li>CYCLE:用于定义当序列产生的值达到限制值后是否循环(NOCYCLE:不循环，CYCLE:循环)。 </li>
-<li>CACHE:表示缓存序列的个数，数据库异常终止可能会导致序列中断不连续的情况，默认值为20，如果不使用缓存可设置NOCACHE</li>
+<li><p>INCREMENT BY :序列变化的步进，负值表示递减。(默认1)</p>
+</li>
+<li><p>START WITH:序列的初始值 。(默认1) </p>
+</li>
+<li><p>MAXvalue:序列可生成的最大值。(默认不限制最大值，NOMAXVALUE) </p>
+</li>
+<li><p>MINVALUE:序列可生成的最小值。(默认不限制最小值，NOMINVALUE) </p>
+</li>
+<li><p>CYCLE:用于定义当序列产生的值达到限制值后是否循环(NOCYCLE:不循环，CYCLE:循环)。 </p>
+</li>
+<li><p>CACHE:表示缓存序列的个数，数据库异常终止可能会导致序列中断不连续的情况，默认值为20，如果不使用缓存可设置NOCACHE</p>
+</li>
 </ul>
-<p><strong>例</strong> </p>
+<p><font color="red"><strong>例</strong> </font></p>
 <ul>
 <li>CREATE SEQUENCE SEQ_DEMO </li>
 <li>INCREMENT BY 1 </li>
@@ -88,17 +95,23 @@ START WITH,">
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE SEQUENCE SEQ_AAA </span><br><span class="line">  INCREMENT BY 2 --序列变化的进步 每次加二</span><br><span class="line">  START WITH 1 --序列的初始值</span><br><span class="line">  MAXvalue 999999999 --序列生成的最大值</span><br><span class="line">  NOCYCLE --用于定义当序列产生的值达到限制值后是否循环(NOCYCLE:不循环，CYCLE:循环)。 </span><br><span class="line">  --表示缓存序列的个数，数据库异常终止可能会导致序列中断不连续的情况，默认值为20，</span><br><span class="line">  --如果不使用缓存可设置NOCACHE</span><br><span class="line">  NOCACHE;</span><br></pre></td></tr></table></figure>
 
-<h2 id="修改、删除序列"><a href="#修改、删除序列" class="headerlink" title="修改、删除序列"></a>修改、删除序列</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter sequence SEQ_AAA INCREMENT BY 1; --对序列进行修改</span><br><span class="line">drop sequence SEQ_AAA; --删除</span><br></pre></td></tr></table></figure>
-
-<h2 id="序列的使用"><a href="#序列的使用" class="headerlink" title="序列的使用"></a>序列的使用</h2><ul>
-<li>currval 表示序列的当前值，新序列必须使用一次nextval 才能获取到值，否则会报错</li>
-<li>nextval 表示序列的下一个值。新序列首次使用时获取的是该序列的初始值，从第二次使用时开始按照设置的步进递增</li>
-<li>查询序列的值：select seq_name.[currval,nextval] from dual;</li>
-<li>SQL语句中使用：insert into table (id) values (seq_name.nextval)</li>
+<p><font color="red"><strong>修改序列</strong> </font></p>
+<p>alter sequence SEQ_AAA INCREMENT BY 1; </p>
+<p><font color="red"><strong>删除序列</strong> </font></p>
+<p>drop sequence SEQ_AAA;</p>
+<p> <font color="red">*<em>序列的使用 *</em> </font></p>
+<ul>
+<li><p>currval 表示序列的当前值，新序列必须使用一次nextval 才能获取到值，否则会报错</p>
+</li>
+<li><p>nextval 表示序列的下一个值。新序列首次使用时获取的是该序列的初始值，从第二次使用时开始按照设置的步进递增</p>
+</li>
+<li><p>查询序列的值：select seq_name.[currval,nextval] from dual;</p>
+</li>
+<li><p>SQL语句中使用：insert into table (id) values (seq_name.nextval)</p>
+</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">--查询全部序列</span><br><span class="line">select * from user_sequences;</span><br><span class="line">select SEQ_AAA.CURRVAL from dual; --获取当前h值</span><br><span class="line">select SEQ_AAA.NEXTVAL from dual; --获取下一个值</span><br><span class="line"></span><br><span class="line">insert into table (id) values (SEQ_AAA.nextval) --sql中使用</span><br></pre></td></tr></table></figure>
 
-<p># </p>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -121,7 +134,7 @@ START WITH,">
     </div>
     
         <div class='side'>
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#序列"><span class="toc-number">1.</span> <span class="toc-text">序列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#序列创建和使用"><span class="toc-number">1.1.</span> <span class="toc-text">序列创建和使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改、删除序列"><span class="toc-number">1.2.</span> <span class="toc-text">修改、删除序列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#序列的使用"><span class="toc-number">1.3.</span> <span class="toc-text">序列的使用</span></a></li></ol></li></ol>
+            
         </div>
     
 </div>
