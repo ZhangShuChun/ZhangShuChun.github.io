@@ -5,20 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>反射 - 凉柚</title>
+    <title>C#播放语音 - 凉柚</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ZSC,"> 
-    <meta name="description" content="唔 摸得,
-  
-  
-    Welcome to my blog, please enter password to read.
-    
-  
-
-Incorrect Password!
-No conte,"> 
+    <meta name="description" content="唔 摸得,简单的播放一个语音1.在项目中添加引用    System.Speech.dll
+2.在类中添加using引用    using System.Speech.Synthesis;
+3.调用播放语音
+,"> 
     <meta name="author" content="ZSC"> 
     <link rel="alternative" href="atom.xml" title="凉柚" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -43,7 +38,7 @@ No conte,">
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" data-url="https://zhangshuchun.github.io"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">反射</h3>
+    <h3 class="subtitle">C#播放语音</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -61,32 +56,39 @@ No conte,">
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">反射</h1>
+        <h1 class="title">C#播放语音</h1>
         <div class="stuff">
-            <span>九月 02, 2019</span>
+            <span>九月 24, 2019</span>
             
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/反射/">反射</a></li></ul>
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/播放语音/">播放语音</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <div id="hbe-security">
-  <div class="hbe-input-container">
-  <input type="password" class="hbe-form-control" id="pass" placeholder="Welcome to my blog, please enter password to read." />
-    <label for="pass">Welcome to my blog, please enter password to read.</label>
-    <div class="bottom-line"></div>
-  </div>
-</div>
-<div id="decryptionError" style="display: none;">Incorrect Password!</div>
-<div id="noContentError" style="display: none;">No content to display!</div>
-<div id="encrypt-blog" style="display:none">
-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
-</div>
-<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+            <h6 id="简单的播放一个语音"><a href="#简单的播放一个语音" class="headerlink" title="简单的播放一个语音"></a><font color="red">简单的播放一个语音</font></h6><p>1.在项目中添加引用    System.Speech.dll</p>
+<p>2.在类中添加using引用    using System.Speech.Synthesis;</p>
+<p>3.调用播放语音</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private void button1_Click_1(object sender, EventArgs e)</span><br><span class="line">&#123;</span><br><span class="line">	string str = &quot;你好&quot;;</span><br><span class="line">	var speechSynthesizer = new SpeechSynthesizer();</span><br><span class="line">	speechSynthesizer.SpeakAsync(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h6 id="案例"><a href="#案例" class="headerlink" title="案例"></a><font color="red">案例</font></h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">using System;</span><br><span class="line">using System.Speech.Synthesis;</span><br><span class="line"></span><br><span class="line">namespace SpeechSynthesizerDemo</span><br><span class="line">&#123;</span><br><span class="line">    class Program</span><br><span class="line">    &#123;</span><br><span class="line">        private static void Main(string[] args)</span><br><span class="line">        &#123;</span><br><span class="line">            var speechSynthesizer = new SpeechSynthesizer();</span><br><span class="line">            speechSynthesizer.SpeakAsync(&quot;尹恩惠，1984年10月3日出生于韩国首尔特别市，韩国影视女演员、歌手。1999年以韩国女子歌手组合Baby V.O.X出道。&quot;);</span><br><span class="line">            Console.ReadKey();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="/music/asd.mp3">
+                <source type="audio/mpeg" src="">
             </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
             
         </div>
         
@@ -94,7 +96,7 @@ U2FsdGVkX1+68uJLNqceVm/6kEK3Mc6HfAblN3B8UK1kY7UajwdP0kePCchRlFfRdJ9TLmfR8l4lK6KU
     </div>
     
         <div class='side'>
-            
+            <ol class="toc"><li class="toc-item toc-level-6"><a class="toc-link" href="#简单的播放一个语音"><span class="toc-number">1.</span> <span class="toc-text">简单的播放一个语音</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#案例"><span class="toc-number">2.</span> <span class="toc-text">案例</span></a></li></ol>
         </div>
     
 </div>
