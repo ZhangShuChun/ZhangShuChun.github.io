@@ -10,16 +10,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="ZSC,"> 
-    <meta name="description" content="唔 摸得,
-  
-  
-    Welcome to my blog, please enter password to read.
-    
-  
-
-Incorrect Password!
-No conte,"> 
-    <meta name="author" content="ZSC"> 
+    <meta name="description" content="唔 摸得,反射.Net Framework 动态获取和加载程序集（dll），并可以获取到程序集的信息
+在程序集中，包含模块（Module），模块包含类型，类型包含成员，提供反射，还可以获取程序集的路径，命名空,"> 
+    <meta name="author" content="ZhangShuChun"> 
     <link rel="alternative" href="atom.xml" title="凉柚" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
@@ -70,23 +63,32 @@ No conte,">
 
         </div>
         <div class="content markdown">
-            <div id="hbe-security">
-  <div class="hbe-input-container">
-  <input type="password" class="hbe-form-control" id="pass" placeholder="Welcome to my blog, please enter password to read." />
-    <label for="pass">Welcome to my blog, please enter password to read.</label>
-    <div class="bottom-line"></div>
-  </div>
-</div>
-<div id="decryptionError" style="display: none;">Incorrect Password!</div>
-<div id="noContentError" style="display: none;">No content to display!</div>
-<div id="encrypt-blog" style="display:none">
-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
-</div>
-<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+            <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>.Net Framework 动态获取和加载程序集（dll），并可以获取到程序集的信息</p>
+<p>在程序集中，包含模块（Module），模块包含类型，类型包含成员，提供反射，还可以获取程序集的路径，命名空间，类。还可以对其进行操作可以对程序集的类进行实例化，调用类中的方法。</p>
+<p>反射</p>
+<p>可以通过类名、成员的名字来进行对象的实例化、操作类成员</p>
+<p>添加dll</p>
+<p>button单机事件</p>
+<p>string dllName=”Core.Common”;//指定dll文件的名字 程序集的名字</p>
+<p>string fullName=”Core.Common.PinYinUtil”;//程序集的名字+类名</p>
+<p>Assembly</p>
+
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
-                <source type="audio/mpeg" src="/music/asd.mp3">
+                <source type="audio/mpeg" src="">
             </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
             
         </div>
         
@@ -94,7 +96,7 @@ U2FsdGVkX19ZzA5yZQfY9t5wk8/J7ppyriukQ+XFY9ZT7Wyw8l8Dtta5Ms4nZqFYg3BiVTf8CP6dK/EH
     </div>
     
         <div class='side'>
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#反射"><span class="toc-number">1.</span> <span class="toc-text">反射</span></a></li></ol>
         </div>
     
 </div>

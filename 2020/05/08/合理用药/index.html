@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hans" class="loading">
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>合理用药 - 凉柚</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate">
+    <meta name="keywords" content="ZSC,"> 
+    <meta name="description" content="唔 摸得,更新记录
+2020‎年‎3‎月‎23‎日             第一次更新      
+2020‎年‎4‎月‎15‎日             第二次更新    
+2020‎年‎5月‎8日    ,"> 
+    <meta name="author" content="ZhangShuChun"> 
+    <link rel="alternative" href="atom.xml" title="凉柚" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+</html>
+<body class="loading">
+    <span id="config-title" style="display:none">凉柚</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="https://zhangshuchun.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">合理用药</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">合理用药</h1>
+        <div class="stuff">
+            <span>五月 08, 2020</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/合理用药/">合理用药</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p>更新记录<br></p>
+<p>2020‎年‎3‎月‎23‎日             第一次更新      <br></p>
+<p>2020‎年‎4‎月‎15‎日             第二次更新    <br></p>
+<p>2020‎年‎5月‎8日               第三次更新    <br></p>
+<h3 id="合理用药上线流程"><a href="#合理用药上线流程" class="headerlink" title="合理用药上线流程"></a>合理用药上线流程</h3><h4 id="系统选项"><a href="#系统选项" class="headerlink" title="系统选项"></a>系统选项</h4><p>​    美康V3、V4及灵医智惠V2都需开通系统选项</p>
+<p>​    <font color="red">合理用药_医院名称</font></p>
+<p>​    KEY        合理用药_医院名称</p>
+<p>​    VALUE    医院PASS中注册所用的名称</p>
+<p><font color="red">    合理用药_使用版本</font></p>
+<p>​    KEY        合理用药_使用版本</p>
+<p>​    VALUE    MdcV3 //美康3.0</p>
+<p>​                    MdcV4 //美康4.0 </p>
+<p>​                BdlyV2 //灵医2.0</p>
+<p><font color="red">    门诊医生工作站_启用合理用药</font></p>
+<p>​    KEY        门诊医生工作站_启用合理用药</p>
+<p>​    VALUE    Y/N</p>
+<p><font color="red">    住院医生工作站_启用合理用药</font></p>
+<p>​    KEY        住院医生工作站_启用合理用药</p>
+<p>​    VALUE    Y/N</p>
+<p><font color="red">    药房工作站_启用合理用药</font></p>
+<p>​    KEY        药房工作站_启用合理用药</p>
+<p>​    VALUE    Y/N</p>
+<p><font color="red">    合理用药_配伍禁忌允许通过</font></p>
+<p>​    KEY        合理用药_配伍禁忌允许通过</p>
+<p>​    VALUE    Y/N  </p>
+<p><font color="red">    合理用药_中成药注射剂与西药(氯化钠除外)不允许合用</font></p>
+<p>​    KEY        合理用药_中成药注射剂与西药(氯化钠除外)不允许合用</p>
+<p>​    VALUE    Y/N  </p>
+<h4 id="上线"><a href="#上线" class="headerlink" title="上线"></a>上线</h4><p><font color="red">    PASS</font></p>
+<p>​    1.提取医院的字典数据和美康公司配对数据；</p>
+<p>​    2.配对完成后会给医院寄数据光盘，合理用药工程师安装PASS服务器，部署合理用药环境，这些环境       完成后美康工程师会给你发配置文件PASS4Invoke.ini，或者现场有工程师的就发给现场工程师了，       联系医院或现场工程师上传下面四个文件，DLL文件基本都已经有了，PASS4Invok.Ini文件必须上       传，每个医院都不一样</p>
+<p>​    PASS4Invoke.ini</p>
+<p>​    PASS4Invoke.dll</p>
+<p>​    PASSWeb.dll</p>
+<p>​    HS.IF.BLL.PASS.dll</p>
+<p>​    上传到his 系统管理、文件管理</p>
+<p>​    先认证 认证密码：  </p>
+<p>​    Let me set it</p>
+<p>​    建立HSEXE 文件夹 然后上传</p>
+<p><font color="red">CDSS</font></p>
+<p>​    1.上传cdss免安装文件（安定区二院上传免安装文件时libcef.lib文件使his不能双开）</p>
+<p>​    </p>
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><p>​    测试功能 门诊医生工作站，医生医嘱录入，药房取药（门诊，住院）、临床路径</p>
+<p>​    合理用药日志文件MCDebug.log 程序安装目录下昊源科技</p>
+<h4 id="合理用药上线医院"><a href="#合理用药上线医院" class="headerlink" title="合理用药上线医院"></a>合理用药上线医院</h4><table>
+<thead>
+<tr>
+<th>编号</th>
+<th>医院名称</th>
+<th>是否完整版</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>肃南县人民医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>√</td>
+<td>正宁县中医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>3</td>
+<td>甘州区妇幼保健院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>√</td>
+<td>白银市中心医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>5</td>
+<td>嘉峪关市中医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td></td>
+<td>庆阳市西峰区人民医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>√</td>
+<td>甘肃医学附属医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>8</td>
+<td>昌吉人民医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>9</td>
+<td>青海省人民医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>10</td>
+<td>通渭县中医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>√</td>
+<td>庆阳市第二人民医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>12</td>
+<td>靖远县中医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>13</td>
+<td>白银市平川区人民医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>√</td>
+<td>甘州区人民医院</td>
+<td>PASSV4完整版</td>
+</tr>
+<tr>
+<td>√</td>
+<td>安定区二院</td>
+<td>CDSSV2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>榆中县医院</td>
+<td>PASSV4</td>
+</tr>
+</tbody></table>
+<h4 id="医院特殊需求统计"><a href="#医院特殊需求统计" class="headerlink" title="医院特殊需求统计"></a>医院特殊需求统计</h4><table>
+<thead>
+<tr>
+<th>医院名称</th>
+<th>需求描述</th>
+<th>系统选项</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>安定区二院</td>
+<td>1.下处方或医嘱时，如果有配伍禁忌药品，确认处方或医嘱时，提示配伍禁忌无法确认</td>
+<td>合理用药_中成药注射剂与西药(氯化钠除外)不允许合用</td>
+</tr>
+<tr>
+<td>安定区二院</td>
+<td>2.中成药注射剂只能和氯化钠合用，与其他西药合用时触发配伍禁忌</td>
+<td>合理用药_配伍禁忌允许通过</td>
+</tr>
+</tbody></table>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#合理用药上线流程"><span class="toc-number">1.</span> <span class="toc-text">合理用药上线流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#系统选项"><span class="toc-number">1.1.</span> <span class="toc-text">系统选项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#上线"><span class="toc-number">1.2.</span> <span class="toc-text">上线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试"><span class="toc-number">1.3.</span> <span class="toc-text">测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#合理用药上线医院"><span class="toc-number">1.4.</span> <span class="toc-text">合理用药上线医院</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#医院特殊需求统计"><span class="toc-number">1.5.</span> <span class="toc-text">医院特殊需求统计</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
