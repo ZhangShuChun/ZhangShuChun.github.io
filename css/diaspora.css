@@ -320,3 +320,8 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
     color: #979b9e;
     background-color: #232323;
 }
+#live2d-widget
+{
+
+	opacity: 1;
+}
