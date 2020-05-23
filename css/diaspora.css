@@ -313,3 +313,10 @@ pre .keyword,pre .javascript .function {color:#cc99cc;}
   .article .side {display:none}
   .comment .gt-btn-public .gt-btn-text:after{content:"";}
 }
+#footer {
+    margin: 54px 0 0;
+    padding: 32.4px 0;
+    text-align: center;
+    color: #979b9e;
+    background-color: #232323;
+}
