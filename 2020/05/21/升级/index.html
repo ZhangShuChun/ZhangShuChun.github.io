@@ -130,42 +130,19 @@
         </header>
 
         <div class="post-content">
-            <hr>
-<p>大林寺桃花<br></p>
-<p>人间四月芳菲尽，山寺桃花始盛开。<br><br>长恨春归无觅处，不知转入此中来。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<hr>
-<br>
-<blockquote>
-    <p>准备</p>
-</blockquote>
-1. 准备dll文件时几个版本可以放一块
-
-<ol start="2">
-<li><p>提炼出最后一个版本的webservice，检查config是否以删除</p>
-</li>
-<li><p>截图 看有无不需要编译的包</p>
-</li>
-<li><p>备份一份webService、hsexe文件</p>
-</li>
-</ol>
-<br>
-
-<blockquote>
-    <p>步骤</p>
-</blockquote>
-1. 上传动态库：上传时应当先添加文件，然后上传
-
-<ol start="2">
-<li><p>执行批处理 在服务器上执行 全部执行完批处理后编译无效对象 </p>
-</li>
-<li><p>更换服务</p>
-</li>
-<li><p>用myGenerator生成所有的hshis下的包，生成批处理，点一下，处理完之后登陆hshis编译无效对象</p>
-<p>myGenerator→连接数据库→（类型:PACKAGE）→点击生成PCK</p>
-</li>
-</ol>
-<p>5.测试 自助机和微信</p>
-
+            <div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="Welcome to my blog, please enter password to read.">
+    <label for="pass">Welcome to my blog, please enter password to read.</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
         </div>
 
         <section class="post-tags">

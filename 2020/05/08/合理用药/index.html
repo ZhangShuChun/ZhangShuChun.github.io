@@ -101,68 +101,6 @@
             <div class="container">
     
     
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    document.ready(
-        function () {
-            tocbot.init({
-                tocSelector: '.tocbot-list',
-                contentSelector: '.post-content',
-                headingSelector: 'h1, h2, h3, h4, h5',
-                collapseDepth: 1,
-                orderedList: false,
-                scrollSmooth: true,
-            })
-        }
-    )
-
-    function expand_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 6,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "collapse_toc()");
-        b.innerHTML = "Collapse all"
-    }
-
-    function collapse_toc() {
-        var b = document.querySelector(".tocbot-toc-expand");
-        tocbot.init({
-            tocSelector: '.tocbot-list',
-            contentSelector: '.post-content',
-            headingSelector: 'h1, h2, h3, h4, h5',
-            collapseDepth: 1,
-            orderedList: false,
-            scrollSmooth: true,
-        });
-        b.setAttribute("onclick", "expand_toc()");
-        b.innerHTML = "Expand all"
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-</script>
-    
 
     
     <article class="post-wrap">
@@ -192,91 +130,19 @@
         </header>
 
         <div class="post-content">
-            <br>
-
-<hr>
-<p>枉自柔顺温和，空云似桂如兰，<br><br>堪羡犹怜有福，谁知公子无言。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-<hr>
-<br>
-
-
-<p>更新记录<br></p>
-<p>2020‎年‎3‎月‎23‎日             第一次更新      <br></p>
-<p>2020‎年‎4‎月‎15‎日             第二次更新    <br></p>
-<p>2020‎年‎5月‎8日               第三次更新    <br></p>
-<h6 id="系统选项"><a href="#系统选项" class="headerlink" title="系统选项"></a>系统选项</h6><blockquote>
-<p>合理用药_医院名称</p>
-<p>KEY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 合理用药_医院名称</p>
-<p>VALUE &nbsp;&nbsp;医院PASS中注册所用的名称</p>
-</blockquote>
-
-
-
-<blockquote>
-<p>合理用药_使用版本</p>
-<p>KEY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 合理用药_使用版本</p>
-<p>VALUE &nbsp;&nbsp;MdcV3/MdcV4/BdlyV2</p>
-</blockquote>
-
-
-
-<blockquote>
-<p>门诊医生工作站_启用合理用药</p>
-<p>KEY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 门诊医生工作站_启用合理用药</p>
-<p>VALUE &nbsp;&nbsp;Y/N</p>
-</blockquote>
-
-
-
-<blockquote>
-<p>住院医生工作站_启用合理用药</p>
-<p>KEY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 住院医生工作站_启用合理用药</p>
-<p>VALUE &nbsp;&nbsp;Y/N</p>
-</blockquote>
-
-
-
-<blockquote>
-<p>药房工作站_启用合理用药</p>
-<p>KEY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 药房工作站_启用合理用药</p>
-<p>VALUE &nbsp;&nbsp;Y/N</p>
-</blockquote>
-
-
-
-<blockquote>
-<p>合理用药_配伍禁忌允许通过</p>
-<p>KEY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 合理用药_配伍禁忌允许通过</p>
-<p>VALUE &nbsp;&nbsp;Y/N</p>
-</blockquote>
-
-
-
-<blockquote>
-<p>合理用药_中成药注射剂与西药(氯化钠除外)不允许合用</p>
-<p>KEY &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 合理用药_中成药注射剂与西药(氯化钠除外)不允许合用</p>
-<p>VALUE &nbsp;&nbsp;Y/N</p>
-</blockquote>
-
-
-
-<h6 id="上线"><a href="#上线" class="headerlink" title="上线"></a>上线</h6><blockquote>
-<p>PASS</p>
-</blockquote>
-
-<p>​    1.提取医院的字典数据和美康公司配对数据；</p>
-<p>​    2.配对完成后会给医院寄数据光盘，合理用药工程师安装PASS服务器，部署合理用药环境，这些环境       完成后美康工程师会给你发配置文件PASS4Invoke.ini，或者现场有工程师的就发给现场工程师了，       联系医院或现场工程师上传下面四个文件，DLL文件基本都已经有了，PASS4Invok.Ini文件必须上              传，每个医院都不一样</p>
-<p>​        PASS4Invoke.ini、PASS4Invoke.dll、PASSWeb.dll、HS.IF.BLL.PASS.dll</p>
-<br>
-
-<blockquote>
-<p>CDSS</p>
-</blockquote>
-
-<p>​    上传cdss免安装文件（上传hexo 免安装文件时libcef.lib文件使his不能双开）</p>
-<h6 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h6><p>​    测试功能 门诊医生工作站，医生医嘱录入，药房取药（门诊，住院）、临床路径</p>
-<p>​    合理用药日志文件MCDebug.log 程序安装目录下</p>
-
+            <div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="Welcome to my blog, please enter password to read.">
+    <label for="pass">Welcome to my blog, please enter password to read.</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
         </div>
 
         <section class="post-tags">
